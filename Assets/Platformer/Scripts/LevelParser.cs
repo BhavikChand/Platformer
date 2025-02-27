@@ -55,15 +55,6 @@ public class LevelParser : MonoBehaviour
     // --------------------------------------------------------------------------
     void LoadLevel()
     {
-        // TextAsset levelData = Resources.Load<TextAsset>(filename);
-        // if (levelData != null)
-        // {
-        //     Debug.Log($"Loaded level data: {levelData.text}");
-        // }
-        // else
-        // {
-        //     Debug.LogError($"Failed to load level file: {filename}.txt");
-        // }
         //Application.dataPath //Is the Assets Folder
         string fileToParse = $"{Application.dataPath}/Resources/{filename}.txt";
         Debug.Log($"Loading level file: {fileToParse}");
@@ -92,6 +83,7 @@ public class LevelParser : MonoBehaviour
                 // Todo - Instantiate a new GameObject that matches the type specified by letter
                 // Todo - Position the new GameObject at the appropriate location by using row and column
                 // Todo - Parent the new GameObject under levelRoot
+                Instantiate(rockPrefab, environmentRoot);
             }
             row++;
         }
