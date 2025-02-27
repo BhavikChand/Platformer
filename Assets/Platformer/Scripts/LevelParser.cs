@@ -83,7 +83,30 @@ public class LevelParser : MonoBehaviour
                 // Todo - Instantiate a new GameObject that matches the type specified by letter
                 // Todo - Position the new GameObject at the appropriate location by using row and column
                 // Todo - Parent the new GameObject under levelRoot
-                Instantiate(rockPrefab, environmentRoot);
+                if (letters[col] == 'x')
+                {
+                    Vector3 pos = new Vector3(col + 0.5f, row + 0.5f, 0f);
+                    GameObject newRock = Instantiate(rockPrefab, environmentRoot);
+                    newRock.transform.position = pos;
+                }
+                if (letters[col] == 'b')
+                {
+                    Vector3 pos = new Vector3(col + 0.5f, row + 0.5f, 0f);
+                    GameObject newRock = Instantiate(brickPrefab, environmentRoot);
+                    newRock.transform.position = pos;
+                }
+                if (letters[col] == '?')
+                {
+                    Vector3 pos = new Vector3(col + 0.5f, row + 0.5f, 0f);
+                    GameObject newRock = Instantiate(questionBoxPrefab, environmentRoot);
+                    newRock.transform.position = pos;
+                }
+                if (letters[col] == 's')
+                {
+                    Vector3 pos = new Vector3(col + 0.5f, row + 0.5f, 0f);
+                    GameObject newRock = Instantiate(stonePrefab, environmentRoot);
+                    newRock.transform.position = pos;
+                }
             }
             row++;
         }
